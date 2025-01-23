@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Input from "@/components/Input";
 import Button from "@/components/Button";
 
-const StepTwo = ({onClick, backClick}) => {
+const StepTwo = ({onClick, backClick, profile, setProfile, error, setError}) => {
     return (
         <div className="bg-white p-8 flex flex-col rounded-lg">
             <Header />
