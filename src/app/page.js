@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import { useState, useEffect, use } from "react";
 import StepOne from "@/components/StepOne";
@@ -13,28 +13,21 @@ const defaultValue = {
   email: "",
   phoneNumber: "",
   password: "",
+  confirmPassword: "",
   date: ""
 }
 
 export default function Home() {
-  const [profile, setProfile] = useState(() => {
-    if (typeof window !== 'undefined')
-      return JSON.parse(localStorage.getItem("profile") || JSON.stringify(defaultValue));
-  })
+  const [profile, setProfile] = useState(defaultValue)
 
   const [step, setStep] = useState(() => {
-    if (typeof window !== 'undefined')
       return Number(localStorage.getItem("step")) || 1
   })
 
   useEffect(() => {
-    if (typeof window !== 'undefined')
-      localStorage.setItem("step", step)
-  }, [step]);
-  useEffect(() => {
-    if (typeof window !== 'undefined')
-      localStorage.setItem("profile", JSON.stringify(profile))
-  }, [profile])
+    localStorage.setItem("profile", JSON.stringify(profile))
+    localStorage.setItem("step", step)
+  }, [profile, step])
 
 
   const onClick = () => {
