@@ -49,7 +49,7 @@ const StepTwo = ({ onClick, backClick, profile, setProfile }) => {
       <div className="flex flex-col gap-3 mb-24">
         {/* Email Input */}
         <div className="flex flex-col">
-          <label>Email</label>
+          <label className="font-semibold leading-4 text-sm">Email<span className="text-red-500">*</span></label>
           <input
             type="email"
             name="email"
@@ -63,7 +63,7 @@ const StepTwo = ({ onClick, backClick, profile, setProfile }) => {
 
         {/* Phone Number Input */}
         <div className="flex flex-col">
-          <label>Phone Number</label>
+          <label className="font-semibold leading-4 text-sm">Phone number<span className="text-red-500">*</span></label>
           <input
             type="tel"
             name="phoneNumber"
@@ -79,7 +79,7 @@ const StepTwo = ({ onClick, backClick, profile, setProfile }) => {
 
         {/* Password Input */}
         <div className="flex flex-col">
-          <label>Password</label>
+          <label className="font-semibold leading-4 text-sm">Password<span className="text-red-500">*</span></label>
           <input
             type="password"
             name="password"
@@ -93,7 +93,7 @@ const StepTwo = ({ onClick, backClick, profile, setProfile }) => {
 
         {/* Confirm Password Input */}
         <div className="flex flex-col">
-          <label>Confirm Password</label>
+          <label className="font-semibold leading-4 text-sm">Confirm Password<span className="text-red-500">*</span></label>
           <input
             type="password"
             name="confirmPassword"

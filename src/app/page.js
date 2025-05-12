@@ -19,10 +19,15 @@ const defaultValue = {
 
 export default function Home() {
   const [profile, setProfile] = useState(defaultValue)
+  const [step, setStep] = useState(1)
 
-  const [step, setStep] = useState(() => {
-      return Number(localStorage.getItem("step")) || 1
-  })
+  useEffect(() => {
+    const savedProfile = localStorage.getItem("profile");
+    const savedStep = localStorage.getItem("step");
+
+    if (savedProfile) setProfile(JSON.parse(savedProfile));
+    if (savedStep) setStep(Number(savedStep));
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("profile", JSON.stringify(profile))

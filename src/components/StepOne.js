@@ -36,32 +36,38 @@ const StepOne = ({ onClick, profile, setProfile }) => {
     <div className="bg-white p-8 flex flex-col rounded-lg">
       <Header />
       <div className="flex flex-col gap-3 mb-24">
+        <p className="font-semibold leading-4 text-sm">First name<span className="text-red-500">*</span></p>
         <input
           name="firstName"
           value={profile.firstName}
           onChange={handleChange}
           placeholder="First Name"
+          className={`p-4 border rounded-lg ${error.firstName ? 'border-red-500' : 'border-gray-300'}`}
         />
         {error.firstName && <p className="text-red-500 text-sm">{error.firstName}</p>}
 
+        <p className="font-semibold leading-4 text-sm">Last name<span className="text-red-500">*</span></p>
         <input
           name="lastName"
           value={profile.lastName}
           onChange={handleChange}
           placeholder="Last Name"
+          className={`p-4 border rounded-lg ${error.lastName ? 'border-red-500' : 'border-gray-300'}`}
         />
         {error.lastName && <p className="text-red-500 text-sm">{error.lastName}</p>}
 
+        <p className="font-semibold leading-4 text-sm">Username<span className="text-red-500">*</span></p>
         <input
           name="username"
           value={profile.username}
           onChange={handleChange}
           placeholder="Username"
+          className={`p-4 border rounded-lg ${error.username ? 'border-red-500' : 'border-gray-300'}`}
         />
         {error.username && <p className="text-red-500 text-sm">{error.username}</p>}
       </div>
-      <div className="flex justify-between gap-2">
-        <button onClick={handleNext}>Next</button>
+      <div className="flex justify-center items-center">
+        <button onClick={handleNext} className="bg-black text-white rounded-md py-2.5 px-3 w-full">Continue 1/3</button>
       </div>
     </div>
   );

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { stepThreeSchema } from "@/schema/validationSchemas";
+import Header from "./Header";
 
 const StepThree = ({ onClick, backClick, profile, setProfile }) => {
   const [error, setError] = useState({
@@ -42,14 +43,12 @@ const StepThree = ({ onClick, backClick, profile, setProfile }) => {
   return (
     <div className="bg-white p-8 flex flex-col rounded-lg">
       {/* Custom Header */}
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl font-semibold">Step 3: Profile Details</h2>
-      </div>
+      <Header/>
       
       <div className="flex flex-col gap-3 mb-24">
         {/* Date of Birth Input */}
         <div className="flex flex-col">
-          <label>Date of Birth</label>
+          <label className="font-semibold leading-4 text-sm">Date of birth<span className="text-red-500">*</span></label>
           <input
             type="date"
             name="date"
@@ -62,7 +61,7 @@ const StepThree = ({ onClick, backClick, profile, setProfile }) => {
 
         {/* Profile Image Input */}
         <div className="flex flex-col">
-          <label>Profile Image</label>
+          <label className="font-semibold leading-4 text-sm">Profile image<span className="text-red-500">*</span></label>
           <input
             type="file"
             name="profileImage"
@@ -79,7 +78,7 @@ const StepThree = ({ onClick, backClick, profile, setProfile }) => {
         {/* Back Button */}
         <button
           onClick={backClick}
-          className="bg-gray-300 text-black p-2 rounded"
+          className={`py-2.5 px-3 flex justify-center items-center rounded-md bg-white text-[#202124] w-1/3 border border-[#CBD5E1]`}
         >
           Back
         </button>
@@ -87,7 +86,7 @@ const StepThree = ({ onClick, backClick, profile, setProfile }) => {
         {/* Continue Button */}
         <button
           onClick={handleNext}
-          className="bg-blue-500 text-white p-2 rounded"
+          className={`py-2.5 px-3 flex justify-center items-center rounded-md bg-[#121316] text-white w-full`}
           disabled={!!error.date || !!error.profileImage} // Disable button if there are validation errors
         >
           Continue 3/3
